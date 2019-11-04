@@ -6,8 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gouacide/opendataMIASHS"
+  },
   "author": "Bialek_ElGabsi_Farenc_Rivet",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gouacide/opendataMIASHS/issues"
+  },
+  "homepage": "https://github.com/Gouacide/opendataMIASHS/#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
