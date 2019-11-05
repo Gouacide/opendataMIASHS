@@ -1,0 +1,15 @@
+*Télécharger Node js  https://nodejs.org/fr/download/ 
+  - Choisir format, système d'exploitation
+* Initialiser le projet et les options de celui-ci
+  - Commande npm init
+* Installer la fonctionnalité express
+  - Commande npm install express
+* Se placer dans le dossier "my app" de notre projet
+* Lancer le côté serveur
+  - Commande node index.js
+    1) Nécessité du module csv-express
+        - Commande npm install csv-express
+    2) Nécessité du module node-fetch
+        - Commande npm install node-fetch
+* Relancer la commande node index.js
+  
