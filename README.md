@@ -1,7 +1,7 @@
 # opendataMIASHS
 Projet de faire une API en nodeJS (croisement de sources de données sous formats différents, création de requête serveur) 
 
-Créer un serveur Web en nodeJs hébergé sur Heroku synchronisé de Github
+Créer un serveur Web en nodeJs hébergé sur Heroku synchronisé de Github.
 Faire un fournisseur API Web
 Avec négociation du contenu (Server Driver)
 Au moins 2 sources de données (au moins 2 formats)
