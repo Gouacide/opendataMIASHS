@@ -1,11 +1,15 @@
 var express = require("express");/* npm install express */
 var csv = require('csv-express')/* npm install csv-express*/
 
+var fetch_result = "";
+
 const fs = require('fs')
 
 var app = express();
 
 app.get('/', function (req, res) {
+	correctMsg2();
+	res.json(fetch_result);
     res.send('Hello World!')
   })
 
@@ -103,7 +107,8 @@ req.end(function (res) {
 
 			if (analyse["neg_percent"] != "0%")
 					emo = emo+ " &#x1F61F;";
-			console.log(analyse["text"]+emo);
+			var result = JSON.stringify({blague : blague_text, categorie :blague["category"], emoji : emo });
+			fetch_result = JSON.parse(result);
 		});
 });
 
