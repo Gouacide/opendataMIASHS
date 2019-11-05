@@ -1,22 +1,23 @@
 {
-  "name": "myapp",
+  "name": "tutonodejsinit",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Tuto",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Gouacide/opendataMIASHS"
+    "url": "git+https://github.com/natoine/tutonodejsinit.git"
   },
-  "author": "Bialek_ElGabsi_Farenc_Rivet",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Gouacide/opendataMIASHS/issues"
+    "url": "https://github.com/natoine/tutonodejsinit/issues"
   },
-  "homepage": "https://github.com/Gouacide/opendataMIASHS/#readme",
+  "homepage": "https://github.com/natoine/tutonodejsinit#readme",
   "dependencies": {
+    "csv-express": "^1.2.2",
     "express": "^4.17.1"
   }
 }
