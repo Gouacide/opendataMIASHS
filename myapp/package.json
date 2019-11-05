@@ -8,16 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/natoine/tutonodejsinit.git"
+    "url": "git+https://github.com/Gouacide/opendataMIASHS"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/natoine/tutonodejsinit/issues"
+    "url": "https://github.com/Gouacide/opendataMIASHS/issues"
   },
-  "homepage": "https://github.com/natoine/tutonodejsinit#readme",
+  "homepage": "https://github.com/Gouacide/opendataMIASHS#readme",
   "dependencies": {
     "csv-express": "^1.2.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
   }
 }
