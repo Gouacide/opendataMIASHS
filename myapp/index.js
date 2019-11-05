@@ -48,22 +48,64 @@ app.listen(3000, function () {
   
 const fetch = require("node-fetch");
 	
-function correctMsg() {
-
-var request = require('request');
-request('https://api.jikan.moe/v3/search/anime?q=naruto', function (error, response, body) {
-  if (!error && response.statusCode == 200) {
-    console.log(body); // Print the google web page.
-  }
-});
-    }
-	
 function correctMsg2() {
+var unirest = require("unirest");
 
-var request = require('request');
-request('https://cdn.animenewsnetwork.com/encyclopedia/api.xml?title=~naruto', function (error, response, body) {
-  if (!error && response.statusCode == 200) {
-    console.log(body); // Print the google web page.
-  }
+var req = unirest("GET", "https://jokeapi.p.rapidapi.com/category/Any");
+
+req.query({
+	"format": "json"
 });
-    }
+
+req.headers({
+	"x-rapidapi-host": "jokeapi.p.rapidapi.com",
+	"x-rapidapi-key": "Ez1zks3VaVmshNkRNA6CstvAj9ucp18lEoHjsnq0tTha5zioix"
+});
+
+
+req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+	var blague = res.body;
+	var blague_text = "";
+	console.log(blague);
+	if (blague["setup"]){blague_text= blague["setup"];
+	blague_text= blague_text+blague["delivery"]
+	}
+	else
+		blague_text=blague["joke"];
+	//console.log(blague_text);
+		
+		var unirest2 = require("unirest");
+
+		var req2 = unirest2("POST", "https://text-sentiment.p.rapidapi.com/analyze");
+
+		req2.headers({
+			"x-rapidapi-host": "text-sentiment.p.rapidapi.com",
+			"x-rapidapi-key": "Ez1zks3VaVmshNkRNA6CstvAj9ucp18lEoHjsnq0tTha5zioix",
+			"content-type": "application/x-www-form-urlencoded"
+		});
+
+		req2.form({
+			"text": blague_text
+		});
+
+		req2.end(function (res) {
+			if (res.error) throw new Error(res.error);
+			var analyse = res.body;
+			analyse=JSON.parse(analyse);
+			console.log(analyse);
+			var emo ="";
+			if (analyse["pos_percent"] != "0%" )
+					emo = emo+" &#x1F600;";
+
+			if (analyse["mid_percent"] != "0%")
+					emo = emo+ " &#x1F914;";
+
+			if (analyse["neg_percent"] != "0%")
+					emo = emo+ " &#x1F61F;";
+			console.log(analyse["text"]+emo);
+		});
+});
+
+
+}
