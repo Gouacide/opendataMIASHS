@@ -7,6 +7,10 @@ const fs = require('fs')
 
 var app = express();
 
+const { Parser } = require('json2csv');
+
+const fields = ['blague', 'categorie', 'emoji'];
+ 
 app.get('/', function (req, res) {
 	correctMsg2();
 	res.json(fetch_result);
@@ -32,14 +36,20 @@ app.get('/index', function(req,res) {
 
 })
 
-app.get('/names', function(req,res) {
+				
+app.get('/blague', function(req,res) {
+	correctMsg2();
 	res.format({
         'application/json': function () {
-            res.json([{name : 'toto'}, {name : 'baptiste'}, {name : 'gabriel'}]);
+            res.json(fetch_result);
         },
 
         'application/csv': function () {
-            res.csv([{name : 'toto'}, {name : 'baptiste'}, {name : 'gabriel'}]);
+			const json2csvParser = new Parser({ fields });
+			const csv = json2csvParser.parse(fetch_result);
+	 
+			console.log(csv);
+			res.send(Buffer.from(csv));
         }
     })
 })
@@ -98,7 +108,7 @@ req.end(function (res) {
 			if (res.error) throw new Error(res.error);
 			var analyse = res.body;
 			analyse=JSON.parse(analyse);
-			console.log(analyse);
+			//console.log(analyse);
 			var emo ="";
 			if (analyse["pos_percent"] != "0%" )
 					emo = emo+" &#x1F600;";

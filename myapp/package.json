@@ -19,6 +19,10 @@
   "dependencies": {
     "csv-express": "^1.2.2",
     "express": "^4.17.1",
-    "node-fetch": "^2.6.0"
+    "express-csv": "^0.6.0",
+    "json2csv": "^4.5.4",
+    "jsonexport": "^2.4.1",
+    "node-fetch": "^2.6.0",
+    "unirest": "^0.6.0"
   }
 }
