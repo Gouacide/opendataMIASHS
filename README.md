@@ -15,4 +15,4 @@ Projet de faire une API en nodeJS (croisement de sources de données sous format
 
 -README markdown
 
-Récupérer deux API complémentaires, créer une interface client permettant de chercher l'anime et d'observer toutes ses caractéristiques. Enfin, permettre de télécharger le résultat sous deux formats (par ex : json, csv) en deux langues (par ex : français, anglais). 
+Récupérer deux API complémentaires, créer une interface client permettant de générer une blague et de savoir si celle-ci est "correcte", ou plutôt discriminante. Enfin, permettre de télécharger le résultat sous deux formats (par ex : json, csv) en deux langues (par ex : français, anglais). 
