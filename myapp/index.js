@@ -36,7 +36,6 @@ app.get('/index', function(req,res) {
 
 })
 
-				
 app.get('/blague', function(req,res) {
 	correctMsg2();
 	res.format({
