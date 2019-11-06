@@ -7,6 +7,8 @@ const fs = require('fs')
 
 var app = express();
 
+var jokeList ="";
+
 const { Parser } = require('json2csv');
 
 const fields = ['blague', 'categorie', 'emoji'];
@@ -35,23 +37,40 @@ app.get('/index', function(req,res) {
 	})
 
 })
-
+app.get('/joke', function(req,res) {
+	correctMsg2();
+	res.format({
+        'application/json': function () {
+		res.json(fetch_result);
+        }
+	});
+});
+		
+		
 app.get('/blague', function(req,res) {
 	correctMsg2();
 	res.format({
         'application/json': function () {
-            res.json(fetch_result);
+		jokeList = '['+jokeList+']'
+		res.json(jokeList);
         },
 
         'application/csv': function () {
-			const json2csvParser = new Parser({ fields });
-			const csv = json2csvParser.parse(fetch_result);
+		jokeList = '['+jokeList+']'
+		const json2csvParser = new Parser({ fields, delimiter: ';' });
+		const csv = json2csvParser.parse(jokeList);
 	 
-			console.log(csv);
-			res.send(Buffer.from(csv));
+		console.log(csv);
+		res.send(Buffer.from(csv));
         }
     })
 })
+app.get('/test', function(req,res){
+	function increment(){
+		console.log(jokeList);
+		jokeList = jokeList+','+fetch_result;
+	}
+});
 
 app.listen(3000, function () {
 	correctMsg2();

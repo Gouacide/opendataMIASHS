@@ -26,6 +26,7 @@
 jsonbtn = document.getElementById("jsonbtn")
 csvbtn = document.getElementById("csvbtn")
 
+var test;
 
 function fetchehpadjson(route)
 {
@@ -56,11 +57,16 @@ function generateJoke(route)
             ).then(function(response){
                 response.json().then(function(data)
                 {
-                    document.getElementById("datajoke").innerHTML = JSON.parse(JSON.stringify(data)).blague;
-					document.getElementById("datacategory").innerHTML = JSON.parse(JSON.stringify(data)).categorie;
-					document.getElementById("dataemoji").innerHTML = JSON.parse(JSON.stringify(data)).emoji;
+					var joke = JSON.parse(JSON.stringify(data))
+                    document.getElementById("datajoke").innerHTML = joke.blague;
+					document.getElementById("datacategory").innerHTML = joke.categorie;
+					document.getElementById("dataemoji").innerHTML = joke.emoji;
                 })
             })
+}
+function save(){
+fetch(`/test`).then(function(response){}
+					)
 }
 function fetchehpadcsv(route)
 {
@@ -81,10 +87,13 @@ function fetchehpadcsv(route)
                 })
             })
 }
+save.onclick = function(){
+	save();
+}
 generate.onclick = function()
 {
 	console.log("clicked on generate")
-	generateJoke(`/blague`)
+	generateJoke(`/`)
 }
 jsonbtn.onclick = function()
 {
