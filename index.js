@@ -2,6 +2,7 @@ var express = require("express");/* npm install express */
 var csv = require('csv-express')/* npm install csv-express*/
 
 const port = process.env.PORT || 3000
+
 var fetch_result = "";
 
 const fs = require('fs')
@@ -72,13 +73,6 @@ app.get('/test', function(req,res){
 		jokeList = jokeList+','+fetch_result;
 	}
 });
-
-app.listen(port, function () {
-	correctMsg2();
-    console.log('Example app listening on '+ port)
-  });
-  
-  
   
 const fetch = require("node-fetch");
 	
@@ -144,3 +138,7 @@ req.end(function (res) {
 return (2);
 
 }
+app.listen(port, function () {
+	correctMsg2();
+    console.log('Example app listening on '+ port)
+  });
