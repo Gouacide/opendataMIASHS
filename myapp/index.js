@@ -1,6 +1,7 @@
 var express = require("express");/* npm install express */
 var csv = require('csv-express')/* npm install csv-express*/
 
+const port = process.env.PORT || 3000
 var fetch_result = "";
 
 const fs = require('fs')
@@ -72,9 +73,9 @@ app.get('/test', function(req,res){
 	}
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
 	correctMsg2();
-    console.log('Example app listening on port 3000!')
+    console.log('Example app listening on '+ port)
   });
   
   
