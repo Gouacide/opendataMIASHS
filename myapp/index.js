@@ -45,6 +45,7 @@ app.get('/names', function(req,res) {
 })
 
 app.listen(3000, function () {
+	correctMsg2();
     console.log('Example app listening on port 3000!')
   });
   
@@ -111,6 +112,6 @@ req.end(function (res) {
 			fetch_result = JSON.parse(result);
 		});
 });
-
+return (2);
 
 }
