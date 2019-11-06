@@ -11,7 +11,7 @@
 		<button type="button" id="generate">Generate</button>
 		<button type="button" id="jsonbtn">JSON</button>
         <button type="button" id="csvbtn">CSV</button>
-		<button type="button" id="save">Save</button>
+		<button type="button" id="savebtn">Save</button>
 
     <div id="response">
         Joke : <div id=datajoke></div>
@@ -25,27 +25,21 @@
 <script>
 jsonbtn = document.getElementById("jsonbtn")
 csvbtn = document.getElementById("csvbtn")
+savebtn = document.getElementById("savebtn")
 
 var test;
-
+var likedjoke ="";
+var jokes = "";
 function fetchehpadjson(route)
 {
-    fetch(route, 
-                {
-                    method: 'GET',
-                    headers: { 'accept' : 'application/json'}
-                }
-            ).then(function(response){
-                 response.blob().then(function(datablob)
-                {
-					datablob.name = 'newfile.json'
-                    anchor = document.createElement('a')
-                    anchor.download = datablob.name
-                    anchor.href = window.URL.createObjectURL(datablob)
-					anchor.dataset.downloadurl = ['application/json', anchor.download, anchor.href].join(':')
-				    anchor.click()
-                })
-            })
+	jokes = jokes+"]"
+	console.log(JSON.stringify(jokes));
+	
+	var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(jokes);
+	var dlAnchorElem = document.createElement('a');
+	dlAnchorElem.setAttribute("href",     dataStr     );
+	dlAnchorElem.setAttribute("download", "scene.json");
+	dlAnchorElem.click();
 }
 function generateJoke(route)
 {
@@ -61,12 +55,16 @@ function generateJoke(route)
                     document.getElementById("datajoke").innerHTML = joke.blague;
 					document.getElementById("datacategory").innerHTML = joke.categorie;
 					document.getElementById("dataemoji").innerHTML = joke.emoji;
+					likedjoke= joke;
                 })
             })
 }
 function save(){
-fetch(`/test`).then(function(response){}
-					)
+console.log(likedjoke);
+if (jokes=="")
+{jokes= '['+JSON.stringify(likedjoke)}
+else
+{jokes = jokes+','+JSON.stringify(likedjoke)}
 }
 function fetchehpadcsv(route)
 {
@@ -87,7 +85,7 @@ function fetchehpadcsv(route)
                 })
             })
 }
-save.onclick = function(){
+savebtn.onclick = function(){
 	save();
 }
 generate.onclick = function()
