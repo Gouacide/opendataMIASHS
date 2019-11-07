@@ -160,27 +160,28 @@ function fetchehpadcsv(route)
 //Simulation d'appel de l'API
 //*********************************************
 darkjokesJSON.onclick = function(){
-	generateDarkJokejson(`/joke/Dark`)
+	generateJokejson(`/joke/Dark`)
 }
 darkjokesCSV.onclick = function(){
-	generateDarkJokecsv(`/joke/Dark`)
+	generateJokecsv(`/joke/Dark`)
 }
 
 
 
 programmingjokesJSON.onclick = function(){
-	generateJokejson(`/joke`)
+	generateJokejson(`/joke/Programming`)
 }
 programmingjokesCSV.onclick = function(){
-	generateJokecsv(`/joke`)
+	generateJokecsv(`/joke/Programming`)
 }
+
 
 
 miscellaneousjokesJSON.onclick = function(){
-	generateJokejson(`/joke`)
+	generateJokejson(`/joke/Miscellaneous`)
 }
 miscellaneousjokesCSV.onclick = function(){
-	generateJokecsv(`/joke`)
+	generateJokecsv(`/joke/Miscellaneous`)
 }
 
 
