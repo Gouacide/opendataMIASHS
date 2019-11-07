@@ -11,6 +11,8 @@ var app = express();
 
 var jokeList ="";
 
+var categories = "";
+
 const { Parser } = require('json2csv');
 
 const fields = ['blague', 'categorie', 'emoji'];
