@@ -15,11 +15,11 @@ const { Parser } = require('json2csv');
 
 const fields = ['blague', 'categorie', 'emoji'];
  
-/* app.get('/', function (req, res) {
+app.get('/', function (req, res) {
 	correctMsg2();
 	res.json(fetch_result);
     res.send('Hello World!')
-  }) */
+  })
 
 app.get('/index', function(req,res) {
 	fs.readFile('index.html', function(err, html) {
@@ -40,7 +40,6 @@ app.get('/joke', function(req,res) {
 		'application/csv': function () {
 		const json2csvParser = new Parser({ fields, delimiter: ';' });
 		const csv = json2csvParser.parse(fetch_result);
-		console.log(csv);
 		res.send(Buffer.from(csv));
 		}
 	});
@@ -121,13 +120,13 @@ req.end(function (res) {
 			//console.log(analyse);
 			var emo ="";
 			if (analyse["pos_percent"] != "0%" )
-					emo = emo+" &#x1F600;";
+					emo = emo+" :) "; // &#x1F600;
 
 			if (analyse["mid_percent"] != "0%")
-					emo = emo+ " &#x1F914;";
+					emo = emo+ " :| "; //&#x1F914;
 
 			if (analyse["neg_percent"] != "0%")
-					emo = emo+ " &#x1F61F;";
+					emo = emo+ " :( "; //&#x1F61F;
 			var result = JSON.stringify({blague : blague_text, categorie :blague["category"], emoji : emo });
 			fetch_result = JSON.parse(result);
 		});

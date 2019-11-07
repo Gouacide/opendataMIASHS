@@ -67,7 +67,17 @@ function generateJoke(route)
 					var joke = JSON.parse(JSON.stringify(data))
                     document.getElementById("datajoke").innerHTML = joke.blague;
 					document.getElementById("datacategory").innerHTML = joke.categorie;
-					document.getElementById("dataemoji").innerHTML = joke.emoji;
+					var emoj = "";
+					if(joke.emoji.includes(" :) ")){
+						emoj = emoj + "&#x1F600; ";
+					}
+					if(joke.emoji.includes(" :| ")){
+						emoj = emoj + "&#x1F914; ";
+					}
+					if(joke.emoji.includes(" :( ")){
+						emoj = emoj + "&#x1F61F; ";
+					}
+					document.getElementById("dataemoji").innerHTML = emoj;
 					likedjoke= joke;
                 })
             })
