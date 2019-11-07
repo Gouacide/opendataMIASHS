@@ -44,7 +44,14 @@ app.get('/joke', function(req,res) {
 	res.format({
         'application/json': function () {
 		res.json(fetch_result);
-        }
+        },
+		'application/csv': function () {
+		const json2csvParser = new Parser({ fields, delimiter: ';' });
+		const csv = json2csvParser.parse(jokeList);
+	 
+		//console.log(csv);
+		res.send(Buffer.from(csv));
+		}
 	});
 });
 		
