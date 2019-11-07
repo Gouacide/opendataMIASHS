@@ -15,20 +15,11 @@ const { Parser } = require('json2csv');
 
 const fields = ['blague', 'categorie', 'emoji'];
  
-app.get('/', function (req, res) {
+/* app.get('/', function (req, res) {
 	correctMsg2();
 	res.json(fetch_result);
     res.send('Hello World!')
-  })
-
-app.get('/user/:name', function(req, res) {
-	var age=''+req.query.age;
-	if(age!=="undefined" && age.trim().length){
-	res.send('Hello '  + req.params.name + ' tu as ' + age +' ans');
-	}else{
-	(res.send('Hello '  + req.params.name));
-	}
-})
+  }) */
 
 app.get('/index', function(req,res) {
 	fs.readFile('index.html', function(err, html) {
@@ -47,10 +38,10 @@ app.get('/joke', function(req,res) {
         },
 		'application/csv': function () {
 		const json2csvParser = new Parser({ fields, delimiter: ';' });
-		const csv = json2csvParser.parse(jokeList);
-	 
-		//console.log(csv);
+		const csv = json2csvParser.parse(fetch_result);
+		console.log(csv);
 		res.send(Buffer.from(csv));
+		//res.send(Buffer.from(fetch_result));
 		}
 	});
 });

@@ -81,21 +81,18 @@ function generateJokecsv(route)
                     headers: { 'accept' : 'application/csv'}
                 }
             ).then(function(response){
-                  response.blob().then(function(data)
+                  response.blob().then(function(datablob)
                 {
-					
-					//console.log(Buffer.from(data))
-					//const items = JSON.parse(data)
-					//const replacer = (key, value) => value === null ? '' : value // specify how you want to handle null values here
-					//const header = Object.keys(items[0])
-					//let csv = items.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
-					//csv.unshift(header.join(','))
-					//csv = csv.join('\r\n')
-					//console.log(csv);
-					//document.getElementById("datacontent").innerHTML = csv 
-            })
-})
+                    datablob.name = 'newfile.csv'
+                    anchor = document.createElement('a')
+                    anchor.download = datablob.name
+                    anchor.href = window.URL.createObjectURL(datablob)
+                    anchor.dataset.downloadurl = ['application/csv', anchor.download, anchor.href].join(':')
+                    anchor.click()
+                })
+			})
 }
+
 
 function generateJokejson(route)
 {
