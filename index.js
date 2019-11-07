@@ -35,6 +35,7 @@ app.get('/index', function(req,res) {
 })
 
 app.get('/joke', function(req,res) {
+	
 	categories = "Any";
 	correctMsg2(categories);
 	res.format({
@@ -50,6 +51,7 @@ app.get('/joke', function(req,res) {
 });
 
 app.get('/joke/:categories', function(req,res) {
+	console.log( req.params.categories);
 	categories = req.params.categories;
 	correctMsg2(categories);
 	res.format({
