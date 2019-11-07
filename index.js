@@ -48,6 +48,22 @@ app.get('/joke', function(req,res) {
 		}
 	});
 });
+
+app.get('/joke/:categories', function(req,res) {
+	categories = req.params.categories;
+	correctMsg2(categories);
+	res.format({
+        'application/json': function () {
+		res.json(fetch_result);
+        },
+		'application/csv': function () {
+		const json2csvParser = new Parser({ fields, delimiter: ';' });
+		const csv = json2csvParser.parse(fetch_result);
+		res.send(Buffer.from(csv));
+		}
+	});
+});
+
 				
 app.get('/blague', function(req,res) {
 	categories = "Any";
