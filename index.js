@@ -11,7 +11,7 @@ var app = express();
 
 var jokeList ="";
 
-var categories = "";
+var categories = "Any";
 
 const { Parser } = require('json2csv');
 
@@ -98,7 +98,7 @@ const fetch = require("node-fetch");
 	
 function correctMsg2(categories) {
 var unirest = require("unirest");
-
+console.log(categories);
 var req = unirest("GET", "https://jokeapi.p.rapidapi.com/category/"+categories);
 
 req.query({
@@ -159,6 +159,6 @@ return (2);
 }
 
 app.listen(port, function () {
-	correctMsg2();
+	correctMsg2(categories);
     console.log('Example app listening on '+ port)
   });
