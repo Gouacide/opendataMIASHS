@@ -30,6 +30,7 @@ app.get('/index', function(req,res) {
 	})
 
 })
+
 app.get('/joke', function(req,res) {
 	correctMsg2();
 	res.format({
@@ -41,12 +42,10 @@ app.get('/joke', function(req,res) {
 		const csv = json2csvParser.parse(fetch_result);
 		console.log(csv);
 		res.send(Buffer.from(csv));
-		//res.send(Buffer.from(fetch_result));
 		}
 	});
 });
-		
-		
+				
 app.get('/blague', function(req,res) {
 	correctMsg2();
 	res.format({
@@ -65,6 +64,7 @@ app.get('/blague', function(req,res) {
         }
     })
 })
+
 app.get('/test', function(req,res){
 	function increment(){
 		console.log(jokeList);
@@ -87,7 +87,6 @@ req.headers({
 	"x-rapidapi-host": "jokeapi.p.rapidapi.com",
 	"x-rapidapi-key": "Ez1zks3VaVmshNkRNA6CstvAj9ucp18lEoHjsnq0tTha5zioix"
 });
-
 
 req.end(function (res) {
 	if (res.error) throw new Error(res.error);
@@ -136,6 +135,7 @@ req.end(function (res) {
 return (2);
 
 }
+
 app.listen(port, function () {
 	correctMsg2();
     console.log('Example app listening on '+ port)

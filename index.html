@@ -14,8 +14,8 @@
         <button type="button" id="csvbtn">CSV</button>
 		<button type="button" id="savebtn">Save</button>
 		
-		<button type="button" id="appelcsv">AppelCSV</button>
-		<button type="button" id="appeljson">AppelJSON</button>
+		<button type="button" id="appelcsv">AppelAPICSV</button>
+		<button type="button" id="appeljson">AppelAPIJSON</button>
 
     <div id="response">
         Joke : <div id=datajoke></div>
@@ -111,10 +111,10 @@ function generateJokejson(route)
 
 function save(){
 console.log("joke",likedjoke);
-if (jokes=="")
-{jokes= '['+JSON.stringify(likedjoke)}
-else
-{jokes = jokes+','+JSON.stringify(likedjoke)}
+	if (jokes=="")
+	{jokes= '['+JSON.stringify(likedjoke)}
+	else
+	{jokes = jokes+','+JSON.stringify(likedjoke)}
 }
 
 function fetchehpadcsv(route)
@@ -142,11 +142,11 @@ function fetchehpadcsv(route)
 }
 //Simulation d'appel de l'API
 appeljson.onclick = function(){
-generateJokejson(`/joke`)
+	generateJokejson(`/joke`)
 }
 
 appelcsv.onclick= function(){
-generateJokecsv(`/joke`)
+	generateJokecsv(`/joke`)
 }
 //////////////////////////////////
 savebtn.onclick = function(){
