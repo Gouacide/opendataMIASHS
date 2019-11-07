@@ -16,7 +16,8 @@ const { Parser } = require('json2csv');
 const fields = ['blague', 'categorie', 'emoji'];
  
 app.get('/', function (req, res) {
-	correctMsg2();
+	categories = "Any";
+	correctMsg2(categories);
 	res.json(fetch_result);
     res.send('Hello World!')
   })
@@ -32,7 +33,8 @@ app.get('/index', function(req,res) {
 })
 
 app.get('/joke', function(req,res) {
-	correctMsg2();
+	categories = "Any";
+	correctMsg2(categories);
 	res.format({
         'application/json': function () {
 		res.json(fetch_result);
@@ -46,7 +48,8 @@ app.get('/joke', function(req,res) {
 });
 				
 app.get('/blague', function(req,res) {
-	correctMsg2();
+	categories = "Any";
+	correctMsg2(categories);
 	res.format({
         'application/json': function () {
 		jokeList = '['+jokeList+']'
@@ -73,10 +76,10 @@ app.get('/test', function(req,res){
   
 const fetch = require("node-fetch");
 	
-function correctMsg2() {
+function correctMsg2(categories) {
 var unirest = require("unirest");
 
-var req = unirest("GET", "https://jokeapi.p.rapidapi.com/category/Any");
+var req = unirest("GET", "https://jokeapi.p.rapidapi.com/category/"+categories);
 
 req.query({
 	"format": "json"
