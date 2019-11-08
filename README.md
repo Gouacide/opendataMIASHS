@@ -10,7 +10,8 @@ Le serveur utilise la technologie NodeJS.
 
 # Comment utiliser l'API
 
-jokegouby.herokuapp.com/joke/
+lien vers le projet : jokegouby.herokuapp.com/joke/
+                      jokegouby.herokyapp.com/index
 
 Heroku/joke renvoie une blague, sans prendre en compte sa catégorie.
 
