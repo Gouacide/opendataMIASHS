@@ -161,12 +161,32 @@ app.use(bodyParser.json());
 		
 app.post('/checkreaction', function(req,res) {
 
-    console.log(req.body.blague);
-	console.log("wait what");
-	//console.log(req);
-	//console.log(data);
-/*	categories = "Any";
-	correctMsg2(categories);
+    var blaguetocheck =req.body.blague;
+
+	var unirest = require("unirest");
+
+	var req = unirest("GET", "https://acobot-brainshop-ai-v1.p.rapidapi.com/get");
+
+	req.query({
+		"bid": "178",
+		"key": "sX5A2PcYZbsN5EY6",
+		"uid": "mashape",
+		"msg": "i's this a good joke : "+blaguetocheck
+	});
+
+	req.headers({
+		"x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
+		"x-rapidapi-key": "Ez1zks3VaVmshNkRNA6CstvAj9ucp18lEoHjsnq0tTha5zioix"
+	});
+
+
+	req.end(function (res) {
+		if (res.error) throw new Error(res.error);
+
+		console.log(res.body);
+	});
+
+	
 	res.format({
         'application/json': function () {
 		jokeList = '['+jokeList+']'
@@ -181,7 +201,7 @@ app.post('/checkreaction', function(req,res) {
 		console.log(csv);
 		res.send(Buffer.from(csv));
         }
-    })*/
+    })
 })
 
 app.get('/test', function(req,res){
