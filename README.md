@@ -13,3 +13,12 @@ Le serveur utilise la technologie NodeJS.
 jokegouby.herokuapp.com/joke/
 
 Heroku/joke renvoie une blague, sans prendre en compte sa catégorie.
+
+Heroku/joke/*catégorie* renvoie une blague suivant les trois catégories possibles :
+  - Dark
+  - Programming
+  - Miscellaneous
+
+Les données peuvent être renvoyées ou bien en JSON ou bien en CSV.
+
+Dans Heroku/index, vous trouverez l'exemple d'un cas client, où nous pouvons générer une ou plusieurs blague(s), obtenir le résultat de l'analyse sentimentale via un emoji, sauvegarder et télécharger le tout dans les deux formats disponibles 
