@@ -187,7 +187,7 @@ app.post('/checkreaction', function(req,res) {
 		res.format({
         'application/json': function () {
 		
-		res.send(botres);
+		res.json(botres);
         }
     })
 	});
