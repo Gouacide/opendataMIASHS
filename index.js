@@ -1,13 +1,15 @@
 var express = require("express");/* npm install express */
 var csv = require('csv-express')/* npm install csv-express*/
-
+//var bodyparser = require('body-parser')
 const port = process.env.PORT || 3000
+const bodyParser = require("body-parser");
 
 var fetch_result = "";
 
 const fs = require('fs')
 
 var app = express();
+
 
 var jokeList ="";
 
@@ -146,6 +148,41 @@ app.get('/blague', function(req,res) {
         }
     })
 })
+		
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+/**bodyParser.json(options)
+ * Parses the text as JSON and exposes the resulting object on req.body.
+ */
+app.use(bodyParser.json());
+		
+app.post('/checkreaction', function(req,res) {
+
+    console.log(req.body.blague);
+	console.log("wait what");
+	//console.log(req);
+	//console.log(data);
+/*	categories = "Any";
+	correctMsg2(categories);
+	res.format({
+        'application/json': function () {
+		jokeList = '['+jokeList+']'
+		res.json(jokeList);
+        },
+
+        'application/csv': function () {
+		jokeList = '['+jokeList+']'
+		const json2csvParser = new Parser({ fields, delimiter: ';' });
+		const csv = json2csvParser.parse(jokeList);
+	 
+		console.log(csv);
+		res.send(Buffer.from(csv));
+        }
+    })*/
+})
 
 app.get('/test', function(req,res){
 	function increment(){
@@ -217,6 +254,23 @@ req.end(function (res) {
 return (2);
 
 }
+
+
+//app.use(bodyparser.urlencoded({extended : true }));
+//const bodyParser = require("body-parser");
+
+/** bodyParser.urlencoded(options)
+ * Parses the text as URL encoded data (which is how browsers tend to send form data from regular forms set to POST)
+ * and exposes the resulting object (containing the keys and values) on req.body
+ */
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+/**bodyParser.json(options)
+ * Parses the text as JSON and exposes the resulting object on req.body.
+ */
+app.use(bodyParser.json());
 
 app.listen(port, function () {
 	correctMsg2(categories);

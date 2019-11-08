@@ -167,12 +167,14 @@ function fetchehpadcsv(route)
 function checkreaction(route)
 {
     fetch(route, 
-                {
-                    method: 'POST',
-                    headers: { 'accept' : 'application/json'},
-					body: likedjoke
-                }
-            ).then(function(response){
+			   {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(likedjoke)
+			}
+            ).then(function(response){/*
                 response.json().then(function(data)
                 {
 					var joke = JSON.parse(JSON.stringify(data))
@@ -190,7 +192,7 @@ function checkreaction(route)
 					}
 					document.getElementById("dataemoji").innerHTML = emoj;
 					likedjoke= joke;
-                })
+                })*/
             })
 }
 

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Gouacide/opendataMIASHS#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "csv-express": "^1.2.2",
     "express": "^4.17.1",
     "express-csv": "^0.6.0",
