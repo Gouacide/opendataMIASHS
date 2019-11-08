@@ -23,6 +23,10 @@
 		<button type="button" id="programmingjokesJSON">AppelAPIProgrammingJSON</button>
 		<button type="button" id="miscellaneousjokesCSV">AppelAPIMiscellaneousCSV</button>
 		<button type="button" id="miscellaneousjokesJSON">AppelAPIMiscellaneousJSON</button>
+		
+		
+		<button type="button" id="checkreactionbtn">CheckReaction</button>
+
 
     <div id="response">
         Joke : <div id=datajoke></div>
@@ -38,6 +42,7 @@
 jsonbtn = document.getElementById("jsonbtn")
 csvbtn = document.getElementById("csvbtn")
 savebtn = document.getElementById("savebtn")
+checkreactionbtn = document.getElementById("checkreactionbtn")
 
 var test;
 var likedjoke ="";
@@ -86,7 +91,6 @@ function generateJoke(route)
 					}
 					document.getElementById("dataemoji").innerHTML = emoj;
 					likedjoke= joke;
-					console.log(likedjoke);
                 })
             })
 }
@@ -158,6 +162,40 @@ function fetchehpadcsv(route)
 	
 	
 }
+
+//*********************************************************************************
+function checkreaction(route)
+{
+    fetch(route, 
+                {
+                    method: 'POST',
+                    headers: { 'accept' : 'application/json'},
+					body: likedjoke
+                }
+            ).then(function(response){
+                response.json().then(function(data)
+                {
+					var joke = JSON.parse(JSON.stringify(data))
+                    document.getElementById("datajoke").innerHTML = joke.blague;
+					document.getElementById("datacategory").innerHTML = joke.categorie;
+					var emoj = "";
+					if(joke.emoji.includes(" :) ")){
+						emoj = emoj + "&#x1F600; ";
+					}
+					if(joke.emoji.includes(" :| ")){
+						emoj = emoj + "&#x1F914; ";
+					}
+					if(joke.emoji.includes(" :( ")){
+						emoj = emoj + "&#x1F61F; ";
+					}
+					document.getElementById("dataemoji").innerHTML = emoj;
+					likedjoke= joke;
+                })
+            })
+}
+
+//*********************************************************************************
+
 //Simulation d'appel de l'API
 //*********************************************
 darkjokesJSON.onclick = function(){
@@ -216,5 +254,13 @@ csvbtn.onclick = function()
     console.log("clicked on csv")
     fetchehpadcsv(`/blague`)   
 }
+
+
+checkreactionbtn.onclick = function()
+{
+    console.log("clicked to check reaction")
+    checkreaction(`/checkreaction`)   
+}
+
 
 </script>
