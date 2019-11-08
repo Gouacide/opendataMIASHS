@@ -34,6 +34,9 @@
 		Emoji : <div id=dataemoji></div>
     </div>
 	<div id="response2">data response API : <div id=datacontent><%= JSON.stringify(data.json)%></div> </div>
+	<div id="response3">
+        BotResponse : <div id=botresponse></div>
+    </div>
 
 </body>
 </html>
@@ -174,25 +177,14 @@ function checkreaction(route)
 				},
 				body: JSON.stringify(likedjoke)
 			}
-            ).then(function(response){/*
+            ).then(function(response){
                 response.json().then(function(data)
                 {
-					var joke = JSON.parse(JSON.stringify(data))
-                    document.getElementById("datajoke").innerHTML = joke.blague;
-					document.getElementById("datacategory").innerHTML = joke.categorie;
-					var emoj = "";
-					if(joke.emoji.includes(" :) ")){
-						emoj = emoj + "&#x1F600; ";
-					}
-					if(joke.emoji.includes(" :| ")){
-						emoj = emoj + "&#x1F914; ";
-					}
-					if(joke.emoji.includes(" :( ")){
-						emoj = emoj + "&#x1F61F; ";
-					}
-					document.getElementById("dataemoji").innerHTML = emoj;
-					likedjoke= joke;
-                })*/
+					var answer  = JSON.parse(JSON.stringify(data))
+					console.log(answer.cnt);
+                    document.getElementById("botresponse").innerHTML = answer.cnt;
+					
+                })
             })
 }
 
