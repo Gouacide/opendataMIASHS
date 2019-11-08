@@ -29,3 +29,5 @@ Dans Heroku/index, vous trouverez l'exemple d'un cas client, o√π nous pouvons g√
 - blagues : jokeapi.p.rapidapi.com
 
 - analyse sentimentale : https://text-sentiment.p.rapidapi.com/analyze
+
+- ChatBot : https://rapidapi.com/Acobot/api/brainshop-ai
