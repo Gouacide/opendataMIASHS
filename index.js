@@ -180,28 +180,20 @@ app.post('/checkreaction', function(req,res) {
 	});
 
 
-	req.end(function (res) {
-		if (res.error) throw new Error(res.error);
+	req.end(function (resq) {
+		if (resq.error) throw new Error(resq.error);
 
-		console.log(res.body);
+		var botres = resq.body;
+		res.format({
+        'application/json': function () {
+		
+		res.send(botres);
+        }
+    })
 	});
 
 	
-	res.format({
-        'application/json': function () {
-		jokeList = '['+jokeList+']'
-		res.json(jokeList);
-        },
-
-        'application/csv': function () {
-		jokeList = '['+jokeList+']'
-		const json2csvParser = new Parser({ fields, delimiter: ';' });
-		const csv = json2csvParser.parse(jokeList);
-	 
-		console.log(csv);
-		res.send(Buffer.from(csv));
-        }
-    })
+	
 })
 
 app.get('/test', function(req,res){
