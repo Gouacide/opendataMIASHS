@@ -151,9 +151,13 @@ window.onclick = function(event) {
 </html>
 
 <script>
+
 jsonbtn = document.getElementById("jsonbtn")
+
 csvbtn = document.getElementById("csvbtn")
+
 savebtn = document.getElementById("savebtn")
+
 checkreactionbtn = document.getElementById("checkreactionbtn")
 
 var test;
@@ -302,58 +306,108 @@ function checkreaction(route)
 //Simulation d'appel de l'API
 //*********************************************
 darkjokesJSON.onclick = function(){
+	darkjokesJSON.disabled = true;
+	setTimeout(function(){
+    darkjokesJSON.disabled = false;	
+	}, 20000);
 	generateJokejson(`/joke/Dark`)
+
+
 }
 darkjokesCSV.onclick = function(){
+	darkjokesCSV.disabled = true;
+	setTimeout(function(){
+    darkjokesCSV.disabled = false;	
+	}, 20000);
 	generateJokecsv(`/joke/Dark`)
 }
 
 
 
 programmingjokesJSON.onclick = function(){
+	programmingjokesJSON.disabled = true;
+	setTimeout(function(){
+    programmingjokesJSON.disabled = false;	
+	}, 20000);
 	generateJokejson(`/joke/Programming`)
 }
 programmingjokesCSV.onclick = function(){
+	programmingjokesCSV.disabled = true;
+	setTimeout(function(){
+    programmingjokesCSV.disabled = false;	
+	}, 20000);
 	generateJokecsv(`/joke/Programming`)
 }
 
 
 
 miscellaneousjokesJSON.onclick = function(){
+	miscellaneousjokesJSON.disabled = true;
+	setTimeout(function(){
+    miscellaneousjokesJSON.disabled = false;	
+	}, 20000);
 	generateJokejson(`/joke/Miscellaneous`)
 }
 miscellaneousjokesCSV.onclick = function(){
+	miscellaneousjokesCSV.disabled = true;
+	setTimeout(function(){
+    miscellaneousjokesCSV.disabled = false;	
+	}, 20000);
 	generateJokecsv(`/joke/Miscellaneous`)
 }
 
 
 //*********************************************
 appeljson.onclick = function(){
+	appeljson.disabled = true;
+	setTimeout(function(){
+    appeljson.disabled = false;	
+	}, 20000);
 	generateJokejson(`/joke`)
 }
 
 appelcsv.onclick= function(){
+	appelcsv.disabled = true;
+	setTimeout(function(){
+    appelcsv.disabled = false;	
+	}, 20000);
 	generateJokecsv(`/joke`)
 }
 //////////////////////////////////
 savebtn.onclick = function(){
+	savebtn.disabled = true;
+	setTimeout(function(){
+    savebtn.disabled = false;	
+	}, 20000);
 	save()
 }
 
 generate.onclick = function()
 {
+	generate.disabled = true;
+	setTimeout(function(){
+    generate.disabled = false;	
+	}, 20000);
 	console.log("clicked on generate")
 	generateJoke(`/`)
 }
 
 jsonbtn.onclick = function()
 {
+	jsonbtn.disabled = true;
+	setTimeout(function(){
+    jsonbtn.disabled = false;	
+	}, 20000);
     console.log("clicked on json")
     fetchehpadjson(`/blague`)
 }
 
 csvbtn.onclick = function()
 {
+	csvbtn.disabled = true;
+	setTimeout(function(){
+    csvbtn.disabled = false;	
+	}, 20000);
     console.log("clicked on csv")
     fetchehpadcsv(`/blague`)   
 }
@@ -361,6 +415,10 @@ csvbtn.onclick = function()
 
 checkreactionbtn.onclick = function()
 {
+	checkreactionbtn.disabled = true;
+	setTimeout(function(){
+    checkreactionbtn.disabled = false;	
+	}, 20000);
     console.log("clicked to check reaction")
     checkreaction(`/checkreaction`)   
 }
