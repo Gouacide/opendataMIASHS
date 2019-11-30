@@ -14,9 +14,9 @@ lien vers le projet : jokegouby.herokuapp.com/joke/
 
                       jokegouby.herokyapp.com/index
 
-Heroku/joke renvoie une blague, sans prendre en compte sa catégorie.
+jokegouby.herokuapp.com/joke renvoie une blague, sans prendre en compte sa catégorie.
 
-Heroku/joke/*catégorie* renvoie une blague suivant les trois catégories possibles :
+jokegouby.herokuapp.com/joke/*catégorie* renvoie une blague suivant les trois catégories possibles :
   - Dark
   - Programming
   - Miscellaneous
