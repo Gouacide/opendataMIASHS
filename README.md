@@ -3,7 +3,7 @@
 
 # opendataMIASHS
 
-L'objectif de ce projet est de créer une API en NodeJs. Parmi les missions à accomplir nous citant principalement : le croisement de sources de données sous formats différents, la création de requête serveur vers des différents Endpoints et le deployement de [Notre_Projet](http://jokegouby.herokuapp.com/index) sur Heroku .
+L'objectif de ce projet est de créer une API en NodeJs. Parmi les missions à accomplir nous citons principalement : le croisement de sources de données sous formats différents, la création de requêtes serveur vers des différents Endpoints et le deployement de [Notre_Projet](http://jokegouby.herokuapp.com/index) sur Heroku .
 
 ## Getting Started
 
@@ -51,7 +51,7 @@ Une bonne ressource pour l'installation de Node : https://oncletom.io/node.js/v1
 
 # But de l'API
 
-Cette API renvoie une blague ainsi que son analyse sentimentale (Positif/Neutre/Négatif). Et puis, simuler la réaction sur une telle blague en observant la réponse du ChatBot.
+Cette API renvoie une blague ainsi que son analyse sentimentale (Positif/Neutre/Négatif). Et puis, simule la réaction d'un chatbot à une telle blague.
 Elle se base sur trois autres API: une générant la blague, une autre analysant les sentiments d'une chaine de caractères et un ChatBot.
 
 On passe donc le résultat de la première dans les deux autres. Puis, nous les restituons. 
@@ -64,13 +64,13 @@ Le serveur utilise la technologie NodeJS avec le framework Express.js ainsi que 
 Requête GET vers l'api [jokeapi](https://jokeapi.p.rapidapi.com/category/Any) Générateur des blagues.
 
 ### /joke
-Requête GET vers l'api [jokeapi](https://jokeapi.p.rapidapi.com/category/Any) qui génère une blague. Cette dernière sera envoyer vers l'api [text-sentiment](https://text-sentiment.p.rapidapi.com/analyze) à fin d'avoir une analyse sentimentale qui sera transformer en emoticone.
+Requête GET vers l'api [jokeapi](https://jokeapi.p.rapidapi.com/category/Any) qui génère une blague. Cette dernière sera envoyée vers l'api [text-sentiment](https://text-sentiment.p.rapidapi.com/analyze) à fin d'avoir une analyse sentimentale qui sera transformer en emoticone.
 
 ### /joke/:category
 Même principe que l'EndPoint précédent mais l'utilisateur choisi, cette fois, la catégorie de la blague (Dark, Programming ou Miscellaneou).
 
 ### /checkreaction
-Requête POST vers l'api [acobot-brainshop-ai-v1](https://acobot-brainshop-ai-v1.p.rapidapi.com/get). Les résultats sont affichés et considérer une simulation du retour humain.
+Requête POST vers l'api [acobot-brainshop-ai-v1](https://acobot-brainshop-ai-v1.p.rapidapi.com/get). Les résultats sont affichés et considérés comme une simulation d'une réaction humaine.
 
 
 # Comment utiliser l'API
@@ -87,9 +87,9 @@ jokegouby.herokuapp.com/joke/*catégorie* renvoie une blague suivant les trois c
   - Miscellaneous
 
 Exemple :
-  jokegouby.herokuapp.com/joke/Dark renvoi une blague de catégorie "humour noir".
+  jokegouby.herokuapp.com/joke/Dark renvoie une blague de catégorie "humour noir".
   
-Les données peuvent être renvoyées ou bien en JSON ou bien en CSV.
+Les données peuvent être renvoyées soit JSON, soit en CSV.
 
 Dans Heroku/index, vous trouverez l'exemple d'un cas client, où nous pouvons générer une ou plusieurs blague(s), obtenir le résultat de l'analyse sentimentale via un emoji, sauvegarder et télécharger le tout dans les deux formats disponibles.
 
@@ -97,7 +97,7 @@ Enfin, l'utilisateur peut envoyer la blague à un chatbot et recevoir la réacti
 
 # Méthodes
 
-L'analyse sentimentale est recupéré via une requête POST, tandis que la récupération de la blague et de la réponse du chatbot sont des requêtes GET.
+L'analyse sentimentale est recupérée via une requête POST, tandis que la récupération de la blague et de la réponse du chatbot sont des requêtes GET.
 
 # API utilisées
 
@@ -144,7 +144,7 @@ Pour installer express et ajouter dans package.json la dépendance à express : 
 
 On peut déjà écrire notre premier serveur node express. Si vous n'avez rien changé dans les propositions du package.json, votre fichier de démarrage serveur est index.js
 
-Avec notre premier code index.js, on a juste créé un serveur http qui écoute sur le port 3000 et une ressource racine ( / ) qui reçoit des requêtes http GET et renvoie "hello world!". Pour tester, il suffit de démarrer votre serveur avec la commande : node index.js
+Avec notre premier code index.js, nous avons créé un serveur http qui écoute sur le port 3000 et une ressource racine ( / ) qui reçoit des requêtes http GET et renvoie "hello world!". Pour tester, il suffit de démarrer votre serveur avec la commande : node index.js
 
 Puis dans votre navigateur : localhost:3000
 
