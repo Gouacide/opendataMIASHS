@@ -1,6 +1,3 @@
-
-[![npm version]'6.4.1']
-
 # opendataMIASHS
 
 L'objectif de ce projet est de créer une API en NodeJs. Parmi les missions à accomplir nous citant principalement : le croisement de sources de données sous formats différents, la création de requête serveur vers des différents Endpoints et le deployement de [Notre_Projet](http://jokegouby.herokuapp.com/index) sur Heroku .
