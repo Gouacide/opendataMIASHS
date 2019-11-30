@@ -7,7 +7,7 @@ L'objectif de ce projet est de créer une API en NodeJs. Parmi les missions à a
 
 ## Getting Started
 
-*Télécharger Node js  https://nodejs.org/fr/download/ 
+* Télécharger Node js  https://nodejs.org/fr/download/ 
   - Choisir format, système d'exploitation
 * Initialiser le projet et les options de celui-ci
   - Commande npm init
