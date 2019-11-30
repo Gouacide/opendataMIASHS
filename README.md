@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/boennemann/badges.svg?branch=master)](/README.md) [![Semver](http://img.shields.io/SemVer/2.0.0.png)](/README.md) [![Dependency Status](https://david-dm.org/boennemann/badges.svg)](/README.md) [![npm](https://img.shields.io/badge/npm-6.4.1-green.svg)](/README.md) [![NodeJS](https://img.shields.io/badge/NodeJS-10.15.3-green.svg)](/README.md) [![Bootstrap](https://img.shields.io/badge/Bootstrap-3.4-blue.svg)](/README.md)  [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](/README.md)
+
 # opendataMIASHS
 
 L'objectif de ce projet est de créer une API en NodeJs. Parmi les missions à accomplir nous citant principalement : le croisement de sources de données sous formats différents, la création de requête serveur vers des différents Endpoints et le deployement de [Notre_Projet](http://jokegouby.herokuapp.com/index) sur Heroku .
