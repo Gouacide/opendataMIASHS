@@ -57,16 +57,16 @@ Le serveur utilise la technologie NodeJS avec le framework Express.js ainsi que 
 
 # Liste des EndPoints de l'API
 
-###/
+### /
 Requête GET vers l'api [jokeapi](https://jokeapi.p.rapidapi.com/category/Any) Générateur des blagues.
 
-###/joke
+### /joke
 Requête GET vers l'api [jokeapi](https://jokeapi.p.rapidapi.com/category/Any) qui génère une blague. Cette dernière sera envoyer vers l'api [text-sentiment](https://text-sentiment.p.rapidapi.com/analyze) à fin d'avoir une analyse sentimentale qui sera transformer en emoticone.
 
-###/joke/:category
+### /joke/:category
 Même principe que l'EndPoint précédent mais l'utilisateur choisi, cette fois, la catégorie de la blague (Dark, Programming ou Miscellaneou).
 
-###/checkreaction
+### /checkreaction
 Requête POST vers l'api [acobot-brainshop-ai-v1](https://acobot-brainshop-ai-v1.p.rapidapi.com/get). Les résultats sont affichés et considérer une simulation du retour humain.
 
 
