@@ -129,7 +129,7 @@ req.end(function (res) {
 });
 
 				
-app.get('/blague', function(req,res) {
+/*app.get('/blague', function(req,res) {
 	categories = "Any";
 	correctMsg2(categories);
 	res.format({
@@ -148,7 +148,7 @@ app.get('/blague', function(req,res) {
         }
     })
 })
-		
+*/		
 
 app.use(bodyParser.urlencoded({
     extended: true
