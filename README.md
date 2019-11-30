@@ -1,6 +1,6 @@
 # opendataMIASHS
 
-L'objectif de ce projet est de créer une API en NodeJs. Parmi les missions à accomplir nous citant principalement : le croisement de sources de données sous formats différents et la création de requête serveur vers des différents Endpoints.
+L'objectif de ce projet est de créer une API en NodeJs. Parmi les missions à accomplir nous citant principalement : le croisement de sources de données sous formats différents, la création de requête serveur vers des différents Endpoints et le deployement de [Notre_Projet](http://jokegouby.herokuapp.com/index) sur Heroku .
 
 ## Getting Started
 
@@ -60,7 +60,7 @@ Le serveur utilise la technologie NodeJS avec le framework Express.js ainsi que 
 
 lien vers le projet : jokegouby.herokuapp.com/joke/
 
-                      jokegouby.herokyapp.com/index
+                      http://jokegouby.herokuapp.com/index
 
 jokegouby.herokuapp.com/joke renvoie une blague, sans prendre en compte sa catégorie.
 
