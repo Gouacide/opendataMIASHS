@@ -9,6 +9,10 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="http://code.jquery.com/jquery-1.7.1.js" type="text/javascript"></script>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
    
 </head>
 <style>
@@ -18,11 +22,11 @@ body {font-family: "Lato", sans-serif}
 <body>
 
 <!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:4px">
+<div class="w3-content" style="max-width:2000px;">
 
   <!-- The Band Section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-    <h2 class="w3-wide">opendataMIASHS</h2>
+    <h2 class="w3-wide">OpendataMIASHS</h2>
     <p class="w3-opacity"><i>Générez vos propres blagues</i></p>
     <p class="w3-justify">Cette API renvoie une blague ainsi que son analyse sentimentale (Positif/Neutre/Négatif). Et puis, simuler la réaction sur une telle blague en observant la réponse du ChatBot. Elle se base sur trois autres API: une générant la blague, une autre analysant les sentiments d'une chaine de caractères et un ChatBot.
 <br />
@@ -33,53 +37,61 @@ Le serveur utilise la technologie NodeJS avec le framework Express.js ainsi que 
       <div class="w3-third">
         <p>Basique</p>
 		
-		<button type="button" id="generate">Generate</button>
-		<button type="button" id="jsonbtn">JSON</button>
-        <button type="button" id="csvbtn">CSV</button>
-		<button type="button" id="savebtn">Save</button>
+		<button type="button" id="generate" class="btn btn-primary">Generate</button>
+		<button type="button" id="jsonbtn" class="btn btn-success">JSON</button>
+        <button type="button" id="csvbtn" class="btn btn-info">CSV</button>
+		<button type="button" id="savebtn" class="btn btn-warning">Save</button>
 		
       </div>
       <div class="w3-third">
         <p>Négociation de contenu</p>
-		<button type="button" id="appelcsv">AppelAPICSV</button>
-		<button type="button" id="appeljson">AppelAPIJSON</button>
+		<button type="button" id="appelcsv" class="btn btn-primary">AppelAPICSV</button>
+		<button type="button" id="appeljson" class="btn btn-success">AppelAPIJSON</button>
       </div>
       <div class="w3-third">
         <p>Reaction du ChatBot</p>
-		<button type="button" id="checkreactionbtn">CheckReaction</button>
+		<button type="button" id="checkreactionbtn" class="btn btn-primary">CheckReaction</button>
       </div>
     </div>
 	
     <div class="w3-row w3-padding-32">
       <div class="w3-third">
         <p>Génération Des Blagues de type: Dark</p>
-		<button type="button" id="darkjokesCSV">AppelAPIDarkCSV</button>
-		<button type="button" id="darkjokesJSON">AppelAPIDarkJSON</button>
+		<button type="button" id="darkjokesCSV" class="btn btn-primary">AppelAPIDarkCSV</button>
+		<button type="button" id="darkjokesJSON" class="btn btn-success">AppelAPIDarkJSON</button>
 		
       </div>
       <div class="w3-third">
         <p>Génération Des Blagues de type: Programming</p>
-		<button type="button" id="programmingjokesCSV">AppelAPIProgrammingCSV</button>
-		<button type="button" id="programmingjokesJSON">AppelAPIProgrammingJSON</button>
+		<button type="button" id="programmingjokesCSV" class="btn btn-primary">AppelAPIProgrammingCSV</button>
+		<button type="button" id="programmingjokesJSON" class="btn btn-success">AppelAPIProgrammingJSON</button>
 		
       </div>
       <div class="w3-third">
         <p>Génération Des Blagues de type: Miscellaneous</p>
-		<button type="button" id="miscellaneousjokesCSV">AppelAPIMiscellaneousCSV</button>
-		<button type="button" id="miscellaneousjokesJSON">AppelAPIMiscellaneousJSON</button>
+		<button type="button" id="miscellaneousjokesCSV" class="btn btn-primary">AppelAPIMiscellaneousCSV</button>
+		<button type="button" id="miscellaneousjokesJSON" class="btn btn-success">AppelAPIMiscellaneousJSON</button>
 		
       </div>
     </div>
 	
-    <div id="response">
-        Joke : <div id=datajoke></div>
-		Category : <div id=datacategory></div>
-		Emoji : <div id=dataemoji></div>
-    </div>
-	<div id="response2">data response API : <div id=datacontent><%= JSON.stringify(data.json)%></div> </div>
-	<div id="response3">
-        BotResponse : <div id=botresponse></div>
-    </div>
+
+  </div>
+  
+  <div class="w3-container w3-content w3-padding-64 bg-primary" style="max-width:800px"> 
+    <h2 class="w3-wide w3-center">Réponses</h2>
+	<br/>
+  <div id="response">
+        <h3>Joke : </h3><div id=datajoke></div>
+		<h3>Category : </h3><div id=datacategory></div>
+		<h3>Emoji : </h3><div id=dataemoji></div>
+  </div>
+  <div id="response2"><h3>data response API :</h3><div id=datacontent><%= JSON.stringify(data.json)%></div> 
+  </div>
+  <div id="response3">
+        <h3>BotResponse :</h3> <div id=botresponse></div>
+  <br />
+  </div>
   </div>
 </body>
 
