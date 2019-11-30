@@ -5,7 +5,7 @@
 
 [![Dependency Status](https://david-dm.org/boennemann/badges.svg)](https://david-dm.org/boennemann/badges)
 
-[![npm](https://img.shields.io/badge/npm%3F-6.4.1-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[[npm](https://img.shields.io/badge/npm-6.4.1-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
